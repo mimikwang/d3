@@ -204,13 +204,9 @@ function draw_map(data, date) {
     // Get Total
     let total = get_total(data, date);
 
-    let tot_confirmed = document.getElementById('text_confirmed'),
-        tot_recovered = document.getElementById('text_recovered'),
-        tot_death = document.getElementById('text_death');
-    
-    tot_confirmed.innerText = total.confirmed.toLocaleString();
-    tot_death.innerText = total.deaths.toLocaleString();
-    tot_recovered.innerText = total.recovered.toLocaleString();
+    document.getElementById('text_confirmed').innerHTML = total.confirmed.toLocaleString();
+    document.getElementById('text_recovered').innerHTML = total.recovered.toLocaleString();
+    document.getElementById('text_death').innerHTML = total.deaths.toLocaleString();
 
     return confirmed;
 };
