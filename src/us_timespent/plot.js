@@ -1,6 +1,6 @@
 // Define paths and global variables
 // ==================================================================
-const path_data = "./data/rawdata.csv",
+const path_data = "./data/us_timespent.csv",
     margin = {top: 10, right: 100, bottom: 30, left: 60},
     width = window.innerWidth - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
