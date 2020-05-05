@@ -204,7 +204,7 @@ function draw_map(data, date) {
     // Get Total
     let total = get_total(data, date);
 
-    const tot_confirmed = document.getElementById('text_confirmed'),
+    let tot_confirmed = document.getElementById('text_confirmed'),
         tot_recovered = document.getElementById('text_recovered'),
         tot_death = document.getElementById('text_death');
     
