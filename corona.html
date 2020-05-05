@@ -21,6 +21,9 @@
             height: 600;
             position: absolute;
         }
+        #stats_table {
+            width: 800;
+        }
         div.tooltip {	
             position: absolute;
             text-align: left;
@@ -51,10 +54,25 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col">
-                <h3>COVID-19</h3>
-                <input type="range" id="date_slider" name="date_slider">
-                <label id="date_label" for="date_slider">Date</label>
-                <div id="map"></div>
+                <div class="row">
+                    <h3>COVID-19</h3>
+                </div>
+                <div class="row">
+                    <input type="range" id="date_slider" name="date_slider">
+                    <label id="date_label" for="date_slider">Date</label>
+                </div>
+                <div class="row">
+                    <table id="stats_table">
+                        <tr>
+                            <td width="20%"><b>Confirmed: </b><text id="text_confirmed">100</text></td>
+                            <td width="20%"><b>Deaths: </b><text id="text_death">100</text></td>
+                            <td width="20%"><b>Recovered: </b><text id="text_recovered">100</text></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="row">
+                    <div id="map"></div>
+                </div>
             </div>
         </div>
     </div>

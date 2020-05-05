@@ -109,6 +109,27 @@ function filter_by_date(data, date) {
 };
 
 /**
+ * Get Total Confirmed, Recovered, Deaths
+ */
+function get_total(data, date) {
+    let confirmed = 0,
+        recovered = 0,
+        deaths = 0;
+
+    let filtered_data;
+    
+    data.forEach(function(d, i) {
+        filtered_data = filter_by_date(d.Data, date)[0];
+
+        confirmed = confirmed + filtered_data.Confirmed;
+        recovered = recovered + filtered_data.Recovered;
+        deaths = deaths + filtered_data.Death;
+    })
+
+    return {confirmed, recovered, deaths}
+}
+
+/**
  * Get most recent date
  * @param {Array} data data
  * @returns {Date}
@@ -179,6 +200,17 @@ function draw_map(data, date) {
                 .attr("stroke", "none")
                 .attr("opacity", 0.5);
     });
+
+    // Get Total
+    let total = get_total(data, date);
+
+    const tot_confirmed = document.getElementById('text_confirmed'),
+        tot_recovered = document.getElementById('text_recovered'),
+        tot_death = document.getElementById('text_death');
+    
+    tot_confirmed.innerText = total.confirmed.toLocaleString();
+    tot_death.innerText = total.deaths.toLocaleString();
+    tot_recovered.innerText = total.recovered.toLocaleString();
 
     return confirmed;
 };
