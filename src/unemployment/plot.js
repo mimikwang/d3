@@ -125,7 +125,7 @@ Promise.all(
                     .style("opacity", 1);
 
                 div.html(`<b>${d.Name}</b>`)
-                    .style("left", margin.left + xScale(d.End) + "px")
+                    .style("left", (d3.event.pageX) + "px")
                     .style("top", margin.top + "px");
             })
             .on("mouseout", function(d) {
