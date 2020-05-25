@@ -162,7 +162,7 @@ plot_data = fetch(url).then(response => {
             .attr("y", function(d) { return yScale(d.Number); })
             .attr("alignment-baseline", "hanging")
             .attr("dy", 3)
-            .text(d => d.Name + ", " + Math.round(d.Start_Age));
+            .text(d => d.Name + ", " + Math.floor(d.Start_Age));
 
     // Plot Mean
     svg.append("line")
