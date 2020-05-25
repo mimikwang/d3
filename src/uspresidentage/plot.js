@@ -145,7 +145,7 @@ plot_data = fetch(url).then(response => {
         .data(age_data)
         .enter()
         .append("rect")
-            .attr("x", 10)
+            .attr("x", 0)
             .attr("width", function(d) { return xScale(d.Start_Age); })
             .attr("y", function(d) { return yScale(d.Number); })
             .attr("height", yScale.bandwidth())
